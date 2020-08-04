@@ -1,14 +1,19 @@
-HTML parser<br />Парсер HTML
+HTML parser<br />
 ===========
-Данная библиотека - это быстрый парсер html кода, который способен работать с невалидным кодом.<br />
-На вход необходимо подавать документ в кодировке UTF-8 или DomDocument.<br />
-Для поиска элементов используются css-селекторы, которые преобразуются внутри в xpath выражение.<br />
-Полученное xpath выражение кешируется, если в методе get не был выставлен в false второй аргумент (стоит отключать кеширование только в случае динамической генерации css выражений).<br />
-В возвращаемых через ->toArray() массивах находятся аттрибуты, текст под ключом #text и вложенные элементы под числовыми ключами.<br />
-Альтернативные методы: ->toXml() возвращает HTML-строку, ->getDom() возвращает DOMDocument<br />
+This library is a fast parser of html code that can work with invalid code<br/>
+At the entry you must submit a document in UTF-8 or DOM Document encoding.<br/>
+To search for elements, css selectors are used which are internally converted<br/>
+to an xpath expression.
+The resulting xpath expression is cached if the second argument was not set <br/>
+to false in the get method(you should disable caching only in the case of <br/>
+dynamic generation of css expressions).
+The arrays returned ->toArray() contain attributes, text under the #text and <br/>
+nested elements under numeric keys.
 
+Alternative methods: ->toXml() return HTML string, ->getDOM() return
+DOMDocument.
 
-Basic usage<br />Примеры использования
+Basic usage<br />
 ===================================
 ```php
 <?php
@@ -29,12 +34,12 @@ HTML errors will be ignored.
 Creating from HTML string: `nokogiri::fromHtml($htmlString)` or `new nokogiri($htmlString)`
 Creating from DomDocument: `nokogiri::fromDom($dom)`
 
-Ошибки html игнорируются.
+TОшибки html игнорируются.
 Создание из строки HTML: nokogiri::fromHtml($htmlString); или new nokogiri($htmlString);
 Создание из DomDocument: nokogiri::fromDom($dom);
 
 
-Implemented css selectors<br />Реализованные селекторы
+Implemented css selectors<br />
 =========================
 * tag
 * .class
@@ -48,15 +53,15 @@ Implemented css selectors<br />Реализованные селекторы
 * :nth-child(even/odd)
 
 
-Requirements<br />Требования
+Requirements<br />
 ============
 DOM
 libxml
 PHP
 
-Links<br />Ссылки
+Links<br />
 ============
-Статьи на хабре:
+More articles on the links below:
 
 * <a href="http://habrahabr.ru/blogs/php/110112/">Нокогири: парсинг HTML в одну строку</a>
 * <a href="http://habrahabr.ru/blogs/php/114323/">Сравнение библиотек для парсинга</a>
